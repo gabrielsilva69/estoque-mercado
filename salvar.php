@@ -34,7 +34,7 @@ $sql = "INSERT INTO produtos
 $stmt = $conexao->prepare($sql);
 
 $stmt->bind_param(
-    "sssdiss",
+    "sssdis",
     $nome,
     $categoria,
     $descricao,
