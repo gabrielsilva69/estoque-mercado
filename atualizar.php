@@ -44,7 +44,7 @@ $sql = "UPDATE produtos
 $stmt = $conexao->prepare($sql);
 
 $stmt->bind_param(
-    "sssd isi",
+    "sssdisi",
     $nome,
     $categoria,
     $descricao,
@@ -53,4 +53,11 @@ $stmt->bind_param(
     $validade,
     $id
 );
+
+if ($stmt->execute()) {
+    header("Location: index.php");
+    exit;
+}
+
+die("Erro ao atualizar produto.");
 ?>
